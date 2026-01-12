@@ -6,21 +6,23 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-@Database(entities = {Device.class}, version = 1)
+@Database(entities = {Device.class}, version = 1, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
-    public DeviceDAO deviceDAO;
-    public static AppDatabase appDatabase;
+    public abstract DeviceDao deviceDao();
+    private static volatile AppDatabase INSTANCE;
 
-    public static AppDatabase getInstance(Context context) {
-        if (appDatabase == null) {
+    public static AppDatabase getInstance(final Context context) {
+        if (INSTANCE == null) {
             synchronized (AppDatabase.class) {
-                if (appDatabase == null) {
-                    appDatabase = Room.databaseBuilder(context, AppDatabase.class, "device.db").build();
+                if (INSTANCE == null) {
+                    INSTANCE = Room.databaseBuilder(context, AppDatabase.class, "device.db")
+                            .fallbackToDestructiveMigration()
+                            .build();
                 }
             }
 
         }
-        return appDatabase;
+        return INSTANCE;
     }
 
 }

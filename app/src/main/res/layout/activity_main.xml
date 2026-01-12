@@ -7,4 +7,15 @@
     android:layout_height="match_parent"
     tools:context=".UI.MainActivity">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_DeviceList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        tools:listitem="@layout/device_item_layout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

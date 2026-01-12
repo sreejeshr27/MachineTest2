@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="6dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:background="@drawable/border"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_DeviceName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Device Name"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_DeviceIp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Device IP"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/tv_DeviceStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Device Offline"
+            android:textSize="16dp" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
