@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MachineTest</string>
+    <string name="sign_in">Sign In</string>
+    <string name="WebClientId">382606176500-pbcvp7969sfedeiq8t2sv026m8g1t5ec.apps.googleusercontent.com</string>
 </resources>
