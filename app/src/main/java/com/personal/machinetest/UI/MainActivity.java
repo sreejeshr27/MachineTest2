@@ -2,6 +2,7 @@ package com.personal.machinetest.UI;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.nsd.NsdManager;
 import android.net.nsd.NsdServiceInfo;
@@ -47,7 +48,9 @@ public class MainActivity extends AppCompatActivity {
         appDatabase = AppDatabase.getInstance(this);
         wifiCheckUp();
         deviceAdapter = new DeviceAdapter(device -> {
-
+            Intent intent=new Intent(this,DetailsActivity.class);
+            intent.putExtra("ipAddress",device.ipAddress);
+            startActivity(intent);
         });
         binding.rvDeviceList.setLayoutManager(new LinearLayoutManager(this));
         binding.rvDeviceList.setAdapter(deviceAdapter);
